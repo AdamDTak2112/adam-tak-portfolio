@@ -2,12 +2,21 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { GoThreeBars } from "react-icons/go"
+import { MenuData } from "../data/menuData"
 
 const Header = () => {
   return (
     <Nav>
-      <NavLink to="/">Home</NavLink>
+      <NavLink to="/">Whatever bro</NavLink>
       <Bars />
+      <NavMenu>
+        {MenuData.map((item, index) => (
+          <NavLink to={item.link} key={index}>
+            {item.title}
+          </NavLink>
+        ))}
+      </NavMenu>
+      <NavBtn>Hey ;)</NavBtn>
     </Nav>
   )
 }
@@ -45,5 +54,24 @@ const Bars = styled(GoThreeBars)`
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
+  }
+`
+
+const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: -40px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+const NavBtn = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `
