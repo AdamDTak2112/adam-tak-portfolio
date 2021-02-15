@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { GoThreeBars } from "react-icons"
+import { GoThreeBars } from "react-icons/go"
 
 const Header = () => {
   return (
@@ -40,5 +40,10 @@ const Bars = styled(GoThreeBars)`
   @media screen and (max-width: 760px) {
     display: block;
     position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
   }
 `
