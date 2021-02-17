@@ -1,14 +1,15 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import { graphql } from "gatsby"
 import { GoThreeBars } from "react-icons/go"
 import { MenuData } from "../data/menuData"
 
 const Header = () => {
   return (
     <Nav>
-      <NavLink to="/">Whatever bro</NavLink>
-      <Bars />
+      <NavLink to="/">Adam Tak, Web Developer</NavLink>
+
       <NavMenu>
         {MenuData.map((item, index) => (
           <NavLink to={item.link} key={index}>
@@ -16,12 +17,14 @@ const Header = () => {
           </NavLink>
         ))}
       </NavMenu>
-      <NavBtn>Hey ;)</NavBtn>
+      <Bars />
     </Nav>
   )
 }
 
 export default Header
+
+const query = graphql
 
 const Nav = styled.nav`
   background: gray;
@@ -41,6 +44,7 @@ const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  font-weight: 600;
 `
 const Bars = styled(GoThreeBars)`
   display: none;
@@ -59,6 +63,7 @@ const Bars = styled(GoThreeBars)`
 
 const NavMenu = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
   margin-right: -40px;
 
