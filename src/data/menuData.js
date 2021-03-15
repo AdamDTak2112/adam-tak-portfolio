@@ -7,7 +7,7 @@ export const MenuData = [{
         link: "/projects"
     },
     {
-        title: "About",
+        title: "Contact",
         link: "/contact"
     },
 ]

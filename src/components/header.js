@@ -4,9 +4,11 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 import { GoThreeBars } from "react-icons/go"
 import { MenuData } from "../data/menuData"
+import Img from "gatsby-image"
 
-const Header = () => {
+const Header = ({ data }) => {
   return (
+    //TODO: Fix Img issues
     <Nav>
       <NavLink to="/">Adam Tak, Web Developer</NavLink>
 
@@ -24,7 +26,17 @@ const Header = () => {
 
 export default Header
 
-const query = graphql
+const query = graphql`
+  query {
+    file(relativePath: { eq: "../images/tak_software_2.png" }) {
+      childImageSharp {
+        fixed(width: 347, height: 184) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 const Nav = styled.nav`
   background: gray;
