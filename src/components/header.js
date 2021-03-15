@@ -79,7 +79,7 @@ const NavMenu = styled.div`
   align-items: center;
   margin-right: -40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 760px) {
     display: none;
   }
 `
