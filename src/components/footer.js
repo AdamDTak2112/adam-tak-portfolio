@@ -13,13 +13,22 @@ const Footer = ({ data }) => {
           </NavLink>
         ))}
       </NavMenu>
+      <FooterText>
+        Created with{" "}
+        <GatsbyLink to="https://www.gatsbyjs.com/">GatsbyJS</GatsbyLink>
+      </FooterText>
     </Nav>
   )
 }
 
 export default Footer
 
-const FooterText = styled.p``
+const FooterText = styled.p`
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: flex-end;
+`
 
 const Nav = styled.nav`
   background: black;
@@ -42,6 +51,14 @@ const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 0%;
   cursor: pointer;
+`
+
+const GatsbyLink = styled(Link)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 2px;
 `
 
 const NavMenu = styled.div`
