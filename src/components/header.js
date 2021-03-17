@@ -9,8 +9,9 @@ import Img from "gatsby-image"
 const Header = ({ data }) => {
   return (
     //TODO: Fix Img issues
+    //TODO: insert logo created
     <Nav>
-      <NavLink to="/">Adam Tak, Web Developer</NavLink>
+      <NavLink to="/">Adam Tak: Web Developer</NavLink>
 
       <NavMenu>
         {MenuData.map((item, index) => (
